@@ -1,0 +1,17 @@
+.center{
+    width: 85%;
+    margin:auto;
+}
+
+.header{
+    margin: 10px 0;
+}
+
+.content{
+    padding:10px;
+}
+
+.json{
+    max-height: 60vh;
+    overflow-y: auto;
+}
