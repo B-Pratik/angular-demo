@@ -1,18 +1,19 @@
 <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Url</th>
-          <th scope="col">Created At</th>
-          <th scope="col">Author</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let row of data; index as i" (click)="rowClicked(row.objectID)">
-          <td>{{ row.title }}</td>
-          <td>{{ row.url }}</td>
-          <td>{{ row.created_at | date }}</td>
-          <td>{{ row.author }}</td>
-        </tr>
-        </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Url</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data; index as i" (click)="rowClicked(row.objectID)">
+      <td>{{ row.title }}</td>
+      <td>{{ row.url }}</td>
+      <td style="white-space: nowrap;">
+        {{ row.created_at | date : 'hh:mm a, dd MMM yy' }}</td>
+      <td>{{ row.author }}</td>
+    </tr>
+  </tbody>
 </table>

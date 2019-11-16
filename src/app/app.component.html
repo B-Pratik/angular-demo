@@ -2,25 +2,25 @@
   <div class="header">
     <span style="font-size: 2em;">Posts Table</span>
     <span class="text-info" style="float: right;margin: 10px;font-size: 1.5em;">
-      {{isPolling ? 'Polling...': 'Updated'}}
+      {{isPolling ? 'Refreshing...': 'Updated'}}
     </span>
-</div>
-<div class="content">
+  </div>
+  <div class="content">
     <div class="form-group form-inline">
-        Post title search: <input class="form-control ml-2" type="text" [(ngModel)]="postTileSearch"/>
+      Post title search: <input class="form-control ml-2" type="text" [(ngModel)]="postTileSearch" />
     </div>
-  <app-table [data]="getFilteredData()" (onRowClick)="rowClicked($event)"></app-table>
-</div>
+    <app-table [data]="getFilteredData()" (onRowClick)="rowClicked($event)"></app-table>
+  </div>
 </div>
 
 <ng-template #content let-modal>
-    <div class="modal-header modal-large">
-      <h4 class="modal-title" id="modal-basic-title">The raw JSON data of the post {{modalObjectID}} :</h4>
-    </div>
-    <div class="modal-body">
-        <pre class="json">{{modalDataObj | json}}</pre>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
-    </div>
-  </ng-template>
+  <div class="modal-header modal-large">
+    <h4 class="modal-title" id="modal-basic-title">The raw JSON data of the post {{modalObjectID}} :</h4>
+  </div>
+  <div class="modal-body">
+    <pre class="json">{{modalDataObj | json}}</pre>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
+  </div>
+</ng-template>
